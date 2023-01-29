@@ -9,6 +9,8 @@ export interface Supplier extends Document{
     price:number;
     supplierName:string;
     manufacturer:string;
+    status: number,
+
 }
 
 const SupplierSchema:Schema = new Schema({
@@ -18,6 +20,8 @@ const SupplierSchema:Schema = new Schema({
     price:{type:Number,required:true},
     supplierName:{type:String,required:true},
     manufacturer:{type:String,required:true},
+    status: { type: Number, required: true },
+
 });
 
 export default mongoose.model<Supplier>('Supplier', SupplierSchema);

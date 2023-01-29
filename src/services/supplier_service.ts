@@ -11,6 +11,10 @@ const createSupplier=(req:Request, res:Response, next: NextFunction)=>{
         price,
         supplierName,
         manufacturer,
+        date,
+        status,
+
+
     
     } =req.body;
 
@@ -21,7 +25,9 @@ const createSupplier=(req:Request, res:Response, next: NextFunction)=>{
             type,
             price,
             supplierName,
-            manufacturer, 
+            manufacturer,
+            date, 
+            status,
         }
     )
     return Supplier.save().then((Supplier) => res.status(201).json(Supplier)).catch(error => res.status(500).json({ error }))
