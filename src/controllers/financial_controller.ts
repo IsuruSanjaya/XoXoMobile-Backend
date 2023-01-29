@@ -16,7 +16,7 @@ router.get("/:id",extractJWT,financial_service.getfinancialById)
 /**
  *  save item contraller
  */
-router.post("/create",financial_service.createfinancial)
+router.post("/",financial_service.createfinancial)
 /**
  *  update item contraller
  */

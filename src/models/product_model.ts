@@ -4,7 +4,7 @@ import mongoose , {Schema, Document} from 'mongoose';
 export interface Product extends Document{
     _id:string;
     name:string;
-    quantity:boolean;
+    quantity:number;
     type:string;
     price:number;
     supplier:string;
@@ -13,7 +13,7 @@ export interface Product extends Document{
 
 const ProductSchema:Schema = new Schema({
     name:{type:String, required:true},
-    quantity:{type:Boolean, required:true},
+    quantity:{type:Number, required:true},
     type:{type:String , required:true},
     price:{type:Number,required:true},
     supplier:{type:String,required:true},

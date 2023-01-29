@@ -16,7 +16,7 @@ router.get("/:id",extractJWT,offerAndPromo_service.getoffersById)
 /**
  * save contraller
  */
-router.post("/create",offerAndPromo_service.createoffers)
+router.post("/",offerAndPromo_service.createoffers)
 /**
  * update contraller
  */

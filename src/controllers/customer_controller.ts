@@ -16,7 +16,7 @@ router.get("/:id",extractJWT,customer_service.getcustomerById)
 /**
  *  save item contraller
  */
-router.post("/create",customer_service.createcustomer)
+router.post("/",customer_service.createcustomer)
 /**
  *  update item contraller
  */
