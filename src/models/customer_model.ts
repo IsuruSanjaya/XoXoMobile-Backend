@@ -19,4 +19,4 @@ const CustomerSchema:Schema = new Schema({
     email:{type:String,required:true},
 });
 
-export default mongoose.model<Customer>('Customer', CustomerSchema);
+export default mongoose.model<Customer>('customer', CustomerSchema);

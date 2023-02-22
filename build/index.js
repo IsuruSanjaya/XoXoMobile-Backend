@@ -13,7 +13,7 @@ router.use(cors());
 /**constorllers */
 
 const suppilerController = require("./controllers/supplier_controller")
-const offerAndPromotionController = require("./controllers/offerAndPromotion_controller")
+// const offerAndPromotionController = require("./controllers/offerAndPromo_controller")
 const employeeController = require("./controllers/employee_controller")
 const customerController = require("./controllers/customer_controller")
 const financialController = require("./controllers/financial_controller")
@@ -58,7 +58,7 @@ const StartServer = () => {
 
    router.use("/customer-order",customerController)
    router.use("/supplier_controller",suppilerController)
-   router.use("/offerAndPromo-controller",offerAndPromotionController);
+//    router.use("/offerAndPromo-controller",offerAndPromotionController);
    router.use("/financial-order-controller",financialController);
    router.use("/employee-controller",employeeController)
    router.use("/product-controller",productController)

@@ -11,6 +11,8 @@ const createproduct=(req:Request, res:Response, next: NextFunction)=>{
     price,
     supplier,
     manufacturer,
+    companyId,
+
     } =req.body;
 
     const product = new product_model(
@@ -21,6 +23,8 @@ const createproduct=(req:Request, res:Response, next: NextFunction)=>{
             price,
             supplier,
             manufacturer,   
+            companyId,
+
         }
     )
     return product.save().then((product) => res.status(201).json(product)).catch(error => res.status(500).json({ error }))

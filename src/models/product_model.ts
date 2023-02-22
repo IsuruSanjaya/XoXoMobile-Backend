@@ -9,6 +9,8 @@ export interface Product extends Document{
     price:number;
     supplier:string;
     manufacturer:string;
+    companyId: string;
+
 }
 
 const ProductSchema:Schema = new Schema({
@@ -18,6 +20,8 @@ const ProductSchema:Schema = new Schema({
     price:{type:Number,required:true},
     supplier:{type:String,required:true},
     manufacturer:{type:String,required:true},
+    companyId: { type: String, required: true },
+
 });
 
 export default mongoose.model<Product>('product', ProductSchema);

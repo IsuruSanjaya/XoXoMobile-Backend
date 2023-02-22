@@ -25,4 +25,4 @@ const FinancialSchema:Schema = new Schema({
     Btype:{type:Boolean,required:true},
 });
 
-export default mongoose.model<Financial>('Financial', FinancialSchema);
+export default mongoose.model<Financial>('financial', FinancialSchema);

@@ -28,4 +28,4 @@ const OffersSchema:Schema = new Schema({
 
 });
 
-export default mongoose.model<Offers>('Offers', OffersSchema);
+export default mongoose.model<Offers>('offers', OffersSchema);
