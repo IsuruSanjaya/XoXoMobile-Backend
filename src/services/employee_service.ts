@@ -14,7 +14,8 @@ const createemployee = (req: Request, res: Response, next: NextFunction) => {
       email,
       DateOFEmployee,
       salary,
-     
+      branch,
+
 
    } = req.body;
 
@@ -29,6 +30,7 @@ const createemployee = (req: Request, res: Response, next: NextFunction) => {
          email,
          DateOFEmployee,
          salary,
+         branch,
       }
    )
    return employee.save().then((employee) => res.status(201).json(employee)).catch(error => res.status(500).json({ error }))
