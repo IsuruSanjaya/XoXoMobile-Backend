@@ -4,21 +4,31 @@ import { NextFunction, Request, Response } from 'express';
 const createcustomer=(req:Request, res:Response, next: NextFunction)=>{
 
     const {
-    fname,
-    lname,
-    PhoneNo,
-    NIC,
-    email,
+      name,
+      NIC,
+      price,
+      BillYear,
+      Billmonth,
+      BillDate,
+      Branch,
+      promoCode,
+      serialNo,
+      ProductID
     
     } =req.body;
 
     const customer = new customer_model(
         {
-            fname,
-            lname,
-            PhoneNo,
-            NIC,
-            email,   
+         name,
+         NIC,
+         price,
+         BillYear,
+         Billmonth,
+         BillDate,
+         Branch,
+         promoCode,
+         serialNo,
+         ProductID   
         }
     )
     return customer.save().then((customer) => res.status(201).json(customer)).catch(error => res.status(500).json({ error }))
