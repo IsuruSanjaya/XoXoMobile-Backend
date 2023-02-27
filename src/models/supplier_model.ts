@@ -10,7 +10,7 @@ export interface Supplier extends Document{
     companyName:number;
     gender:string;
     address:string;
-    email: number,
+    email: string,
 
 }
 
@@ -21,7 +21,7 @@ const SupplierSchema:Schema = new Schema({
     companyName:{type:String,required:true},
     gender:{type:String,required:true},
     address:{type:String,required:true},
-    email: { type: Number, required: true },
+    email: { type: String, required: true },
 
 });
 

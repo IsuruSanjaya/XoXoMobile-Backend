@@ -16,7 +16,7 @@ router.get("/:id",extractJWT,supplier_service.getSupplierById)
 /**
  * save contraller
  */
-router.post("/create",supplier_service.createSupplier)
+router.post("/",supplier_service.createSupplier)
 /**
  * update contraller
  */

@@ -4,7 +4,7 @@ import mongoose , {Schema, Document} from 'mongoose';
 export interface Branch extends Document{
     _id:string;
     brLocation:string;
-    brManangerID:string;
+    brManangerName:string;
     brEmail:string;
     brContactNo:string;
     // companyId: string;
@@ -15,7 +15,7 @@ export interface Branch extends Document{
 
 const BranchSchema:Schema = new Schema({
     brLocation:{type:String, required:true},
-    brManagerID:{type:String, required:true},
+    brManangerName:{type:String, required:true},
     brEmail:{type:String,required:true},
     brContactNo:{type:String,required:true},
     // companyId: { type: String, required: true },

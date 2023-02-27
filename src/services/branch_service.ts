@@ -5,7 +5,7 @@ const createbranch = (req: Request, res: Response, next: NextFunction) => {
 
    const {
       brLocation,
-      brManangerID,
+      brManangerName,
       brEmail,
       brContactNo,
       // btCreatedDate,
@@ -18,7 +18,7 @@ const createbranch = (req: Request, res: Response, next: NextFunction) => {
    const branch = new branch_model(
       {
          brLocation,
-         brManangerID,
+         brManangerName,
          brEmail,
          brContactNo,
          // companyId,
