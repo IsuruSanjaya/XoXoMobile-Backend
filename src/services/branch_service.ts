@@ -8,7 +8,9 @@ const createbranch = (req: Request, res: Response, next: NextFunction) => {
       brManangerID,
       brEmail,
       brContactNo,
-      btCreatedDate,
+      // btCreatedDate,
+      // companyId,
+
 
 
    } = req.body;
@@ -19,7 +21,9 @@ const createbranch = (req: Request, res: Response, next: NextFunction) => {
          brManangerID,
          brEmail,
          brContactNo,
-         btCreatedDate,
+         // companyId,
+
+         // btCreatedDate,
       }
    )
    return branch.save().then((branch) => res.status(201).json(branch)).catch(error => res.status(500).json({ error }))

@@ -14,6 +14,7 @@ const employeeController = require("./controllers/employee_controller")
 const customerController = require("./controllers/customer_controller")
 const financialController = require("./controllers/financial_controller")
 const productController = require("./controllers/product_controller")
+const branchController = require("./controllers/branch_controller")
 // 
 //const db_url = "mongodb+srv://root:root123@cluster0.axvyf.mongodb.net/test"
 const db_url = "mongodb://db-itp:u9i7EW85Ez9N2fZRFvHOXTZG8B5jbX5zzMrAcM0ciTYbU11fKVXbOHKiVZzkiQr54Qe8X4XdPqwlDPekPANqFw==@db-itp.mongo.cosmos.azure.com:10255/erp_2022?ssl=true&retrywrites=false&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@db-itp@";
@@ -68,6 +69,7 @@ const StartServer = () => {
    router.use("/financial-order-controller",financialController);
    router.use("/employee-controller",employeeController);
    router.use("/product-controller",productController);
+   router.use("/branch-controller", branchController)
 
    /** Healthcheck */
    router.get('/ping', (req, res, next) => res.status(200).json({ hello: 'world' }));

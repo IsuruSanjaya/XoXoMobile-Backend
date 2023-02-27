@@ -7,7 +7,9 @@ export interface Branch extends Document{
     brManangerID:string;
     brEmail:string;
     brContactNo:string;
-    btCreatedDate:Date;
+    // companyId: string;
+
+    // btCreatedDate:Date;
 
 }
 
@@ -16,7 +18,9 @@ const BranchSchema:Schema = new Schema({
     brManagerID:{type:String, required:true},
     brEmail:{type:String,required:true},
     brContactNo:{type:String,required:true},
-    btCreatedDate:{type:Date,required:true},
+    // companyId: { type: String, required: true },
+
+    // btCreatedDate:{type:Date,required:true},
 });
 
 export default mongoose.model<Branch>('branch', BranchSchema);
