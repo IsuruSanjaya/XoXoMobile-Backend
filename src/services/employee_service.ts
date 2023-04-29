@@ -1,46 +1,62 @@
+import Employee from "../models/employee_model";
 import employee_model from "../models/employee_model";
 import { NextFunction, Request, Response } from 'express';
 
-const createemployee = (req: Request, res: Response, next: NextFunction) => {
+
+
+const createemployee = async (req: Request, res: Response, next: NextFunction) => {
 
 
    const {
-      name,
+      fname,
+      lname,
+      companyId,
+      customerId,
+      headerImg,
       designation,
-      PhoneNo,
+      DateOFEmployee,
       NIC,
+      PhoneNo,
+      email,
       dob,
       gender,
-      email,
-      DateOFEmployee,
-      salary,
-      branch,
+      salaryDetail,
 
 
    } = req.body;
 
-   const employee = new employee_model(
+   const name=fname+" " +lname;
+   const employee = new Employee(
       {
+         fname,
+         lname,
          name,
+         companyId,
+         customerId,
+         headerImg,
          designation,
-         PhoneNo,
+         DateOFEmployee,
          NIC,
+         PhoneNo,
+         email,
          dob,
          gender,
-         email,
-         DateOFEmployee,
-         salary,
-         branch,
+         salaryDetail,
       }
    )
-   return employee.save().then((employee) => res.status(201).json(employee)).catch(error => res.status(500).json({ error }))
+   try {
+      const employee_1 = await employee.save();
+      return res.status(201).json(employee_1);
+   } catch (error) {
+      return res.status(500).json({ error });
+   }
 
 }
 
 
-const updateemployee = (req: Request, res: Response, next: NextFunction) => {
+const updateemployee = async (req: Request, res: Response, next: NextFunction) => {
    const id = req.params.id;
-   return employee_model.findById(id).then((employee) => {
+   return Employee.findById(id).then((employee) => {
       if (employee) {
          return employee.set(req.body)
             .save().then((employee) => res.status(201)
@@ -52,14 +68,14 @@ const updateemployee = (req: Request, res: Response, next: NextFunction) => {
    }).catch(error => res.status(500).json({ error }))
 
 }
-const getemployees = (req: Request, res: Response, next: NextFunction) => {
+const getemployees = async (req: Request, res: Response, next: NextFunction) => {
    const companyID: string = req.params.id;
    const offset: number = parseInt(req.params.offset);
    const page: number = parseInt(req.params.page);
 
    const query = { companyId: companyID }
 
-   return employee_model
+   return Employee
       .find(query).skip(page * page)
       .limit(offset)
       .then((employees) => res.status(200).json({ employees }))
@@ -67,16 +83,16 @@ const getemployees = (req: Request, res: Response, next: NextFunction) => {
 
 
 }
-const deleteemployee = (req: Request, res: Response, next: NextFunction) => {
+const deleteemployee = async (req: Request, res: Response, next: NextFunction) => {
    const id = req.params.id;
-   return employee_model.findByIdAndDelete(id)
+   return Employee.findByIdAndDelete(id)
       .then(() => res.status(201).json({ success: true }))
       .catch((error) => res.status(500).json({ error }));
 }
 
-const getemployeeById = (req: Request, res: Response, next: NextFunction) => {
+const getemployeeById = async (req: Request, res: Response, next: NextFunction) => {
    const id = req.params.id;
-   return employee_model
+   return Employee
       .findById(id)
       .then((employee) => {
          if (employee) {
@@ -84,7 +100,7 @@ const getemployeeById = (req: Request, res: Response, next: NextFunction) => {
                employee
             })
          } else {
-            return res.status(404).json({ "message": "employee not found" })
+            return res.status(404).json({ "message": "product not found" })
          }
       })
       .catch(error => res.status(500).json({ error }))

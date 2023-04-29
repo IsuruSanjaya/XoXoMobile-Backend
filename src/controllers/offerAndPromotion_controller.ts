@@ -8,11 +8,11 @@ const router = express.Router();
 /**
  * get all contraller
  */
-router.get("/:id/:offset/:page",extractJWT,offerAndPromo_service.getoffers)
+router.get("/:id/:offset/:page",offerAndPromo_service.getoffers)
 /**
  * get by id contraller
  */
-router.get("/:id",extractJWT,offerAndPromo_service.getoffersById)
+router.get("/:id",offerAndPromo_service.getoffersById)
 /**
  * save contraller
  */
@@ -24,7 +24,7 @@ router.put("/:id",offerAndPromo_service.updateoffers)
 /**
  * delete contraller
  */
-router.delete("/:id",extractJWT,offerAndPromo_service.deleteoffers)
+router.delete("/:id",offerAndPromo_service.deleteoffers)
 
 
 export = router

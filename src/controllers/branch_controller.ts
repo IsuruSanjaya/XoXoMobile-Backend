@@ -8,11 +8,11 @@ const router = express.Router();
 /**
  * get by all contraller
  */
-router.get("/:id/:offset/:page",extractJWT,branch_service.getbranchs)
+router.get("/:id/:offset/:page",branch_service.getbranchs)
 /**
  *  get by id contraller
  */
-router.get("/:id",extractJWT,branch_service.getbranchById)
+router.get("/:id",branch_service.getbranchById)
 /**
  *  save item contraller
  */
@@ -24,7 +24,7 @@ router.put("/:id",branch_service.updatebranch)
 /**
  * delete item contraller
  */
-router.delete("/:id",extractJWT,branch_service.deletebranch)
+router.delete("/:id",branch_service.deletebranch)
 
 
 export = router
