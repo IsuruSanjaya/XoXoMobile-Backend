@@ -8,18 +8,18 @@ const router = express.Router()
 /**
  * get by Id contraller
  */
-router.get("/:id", extractJWT, registered_user_service.getRegisteredUser)
+router.get("/:id",  registered_user_service.getRegisteredUser)
 /**
  *  save contraller
  */
-router.post("/", extractJWT, registered_user_service.createRegisteredUser)
+router.post("/",  registered_user_service.createRegisteredUser)
 /**
  * update contraller
  */
-router.put("/:id", extractJWT, registered_user_service.updateRegisteredUser)
+router.put("/:id",  registered_user_service.updateRegisteredUser)
 /**
  * delete contraller
  */
-router.delete("/:id", extractJWT, registered_user_service.updateRegisteredUser)
+router.delete("/:id", registered_user_service.updateRegisteredUser)
 
 export = router

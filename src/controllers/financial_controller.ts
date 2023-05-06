@@ -8,11 +8,11 @@ const router = express.Router();
 /**
  * get by all contraller
  */
-router.get("/:id/:offset/:page",extractJWT,financial_service.getfinancial)
+router.get("/:id/:offset/:page",financial_service.getfinancial)
 /**
  *  get by id contraller
  */
-router.get("/:id",extractJWT,financial_service.getfinancialById)
+router.get("/:id",financial_service.getfinancialById)
 /**
  *  save item contraller
  */
@@ -24,7 +24,7 @@ router.put("/:id",financial_service.updatefinancial)
 /**
  * delete item contraller
  */
-router.delete("/:id",extractJWT,financial_service.deletefinancial)
+router.delete("/:id",financial_service.deletefinancial)
 
 
 export = router

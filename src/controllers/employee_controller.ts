@@ -8,23 +8,23 @@ const router = express.Router();
 /**
  * get by all contraller
  */
-router.get("/:id/:page/:offset",employee_service.getemployees)
+router.get("/:id/:offset/:page",extractJWT,employee_service.getemployees)
 /**
  *  get by id contraller
  */
-router.get("/getbyid/:id",employee_service.getemployeeById)
+router.get("/:id",extractJWT,employee_service.getemployeeById)
 /**
- *  save emp contraller
+ *  save item contraller
  */
-router.post("/create",employee_service.createemployee)
+router.post("/",employee_service.createemployee)
 /**
- *  update emp contraller
+ *  update item contraller
  */
-router.put("/edit/:id",employee_service.updateemployee)
+router.put("/:id",employee_service.updateemployee)
 /**
- * delete emp contraller
+ * delete item contraller
  */
-router.delete("/delete/:id",employee_service.deleteemployee)
+router.delete("/:id",extractJWT,employee_service.deleteemployee)
 
 
 export = router

@@ -18,7 +18,7 @@ const branchController = require("./controllers/branch_controller")
 const serviceController = require ("./controllers/service_controller")
 // 
 //const db_url = "mongodb+srv://root:root123@cluster0.axvyf.mongodb.net/test"
-const db_url = "mongodb://db-itp:u9i7EW85Ez9N2fZRFvHOXTZG8B5jbX5zzMrAcM0ciTYbU11fKVXbOHKiVZzkiQr54Qe8X4XdPqwlDPekPANqFw==@db-itp.mongo.cosmos.azure.com:10255/erp_2022?ssl=true&retrywrites=false&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@db-itp@";
+const db_url = "mongodb+srv://isuru:1234@db01.lterdlp.mongodb.net/test";
 const port = 8090
 /* Connect to Mongo */
 mongoose.connect(db_url)
@@ -68,7 +68,7 @@ const StartServer = () => {
    router.use("/supplier_controller",suppilerController);
    router.use("/offerAndPromo-controller",offerAndPromotionController);
    router.use("/financial-order-controller",financialController);
-   router.use("/employee-controller",employeeController);
+   router.use("/employee",employeeController);
    router.use("/product-controller",productController);
    router.use("/branch-controller", branchController)
 router .use ("/service-controller",serviceController)

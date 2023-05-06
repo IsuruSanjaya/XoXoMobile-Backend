@@ -12,7 +12,7 @@ router.get("/:id/:offset/:page",extractJWT,supplier_service.getSuppliers)
 /**
  * get by id contraller
  */
-router.get("/:id",extractJWT,supplier_service.getSupplierById)
+router.get("/:id",supplier_service.getSupplierById)
 /**
  * save contraller
  */
@@ -24,7 +24,7 @@ router.put("/:id",supplier_service.updateSupplier)
 /**
  * delete contraller
  */
-router.delete("/:id",extractJWT,supplier_service.deleteSupplier)
+router.delete("/:id",supplier_service.deleteSupplier)
 
 
 export = router
